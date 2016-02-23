@@ -11,6 +11,7 @@
 		"email": "",
 		"url": "http://github.com/BillyBlaze/"
 	},
+	"main": "./index.js",
 	"files": [
 		"index.js"
 	],
