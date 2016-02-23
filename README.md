@@ -23,7 +23,7 @@ gulp.task('default', function () {
 
 	return gulp.src('source/views/_MasterLayout.html')
 		.pipe(csharp.removeContentUrl())
-        	.pipe(useref({
+		.pipe(useref({
 			searchPath: process.cwd(),
 			base: '.'
 		}))
