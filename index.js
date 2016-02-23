@@ -13,7 +13,7 @@ module.exports = {
 			var contents = file.contents.toString();
 			var block = contents.match(buildBlockRegEx);
 			
-			options = options = {};
+			options = options || {};
 			
 			var input = options.input || '@Content.url("~{URL}")';
 			input = new RegExp(input.replace("{URL}", "__URL__").replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&").replace("__URL__", "(.*)"), 'gm');
@@ -34,15 +34,19 @@ module.exports = {
 		});
 	},
 	
-	revertContentUrl: function(prefix) {
+	revertContentUrl: function(options) {
 		return through({objectMode: true}, function(file, encoding, cb) {
 			var contents = file.contents.toString();
 			
-			prefix = prefix || "";
+			options = options || {};
+			options.prefix = options.prefix || "";
 			
 			if(proccessedList.length) {
 				for(var i = 0; i < proccessedList.length; i++) {
-					contents = contents.replace(proccessedList[i], '@Content.url("~/' + prefix + proccessedList[i] + '")');
+					var input = options.input || '@Content.url("~{URL}")';
+					input = input.replace("{URL}", options.prefix + proccessedList[i]);
+			
+					contents = contents.replace(proccessedList[i], input);
 				}
 			}
 			
