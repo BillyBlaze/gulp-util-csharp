@@ -1,0 +1,32 @@
+{
+  "name": "gulp-util-csharp",
+  "description": "Utility functions for gulp plugins with csharp",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BillyBlaze/gulp-util-csharp"
+  },
+  "author": {
+    "name": "Paul de Vries",
+    "email": "",
+    "url": "http://github.com/BillyBlaze/"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "through2": "^2.0.0",
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BillyBlaze/gulp-util-csharp/issues"
+  },
+  "homepage": "https://github.com/BillyBlaze/gulp-util-csharp"
+}
