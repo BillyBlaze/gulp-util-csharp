@@ -8,13 +8,9 @@
 	},
 	"author": {
 		"name": "Paul de Vries",
-		"email": "",
 		"url": "http://github.com/BillyBlaze/"
 	},
 	"main": "./index.js",
-	"files": [
-		"index.js"
-	],
 	"dependencies": {
 		"through2": "^2.0.0"
 	},
