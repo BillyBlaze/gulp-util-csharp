@@ -11,7 +11,7 @@ module.exports = {
 	removeContentUrl: function(options) {
 		return through({objectMode: true}, function(file, encoding, cb) {
 			var contents = file.contents.toString();
-			var block = contents.match(buildBlockRegEx);
+			var block = contents.match(buildBlockRegEx) || [];
 			
 			options = options || {};
 			
