@@ -15,7 +15,7 @@ module.exports = {
 			
 			options = options || {};
 			
-			var input = options.input || '@Url.Content("~{URL}")';
+			var input = options.input || '@Url.Content("~/{URL}")';
 			input = new RegExp(input.replace("{URL}", "__URL__").replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&").replace("__URL__", "(.*)"), 'gm');
 			
 			if(block.length) {
@@ -43,7 +43,7 @@ module.exports = {
 			
 			if(proccessedList.length) {
 				for(var i = 0; i < proccessedList.length; i++) {
-					var input = options.input || '@Url.Content("~{URL}")';
+					var input = options.input || '@Url.Content("~/{URL}")';
 					input = input.replace("{URL}", options.prefix + proccessedList[i]);
 			
 					contents = contents.replace(proccessedList[i], input);
